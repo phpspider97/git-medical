@@ -1,0 +1,68 @@
+index type --->
+relation ---> one to one, one to many, many to many, polymorphic
+indexing --->
+Explain statement --->
+how website make responsive ---> 
+reverse routing ---> 
+event loop ---> 
+Job and queue ---> 
+refresh token ---> 
+node ip addreess ---> 
+esile methology ---> 
+candidate key ---> 
+date time and timestamp ---> 
+procedure --->
+aggrigation --->
+loop difference --->
+seperate date and time in mysql --->
+buffer --->
+stream --->
+how to secure JWT --->
+Join --->
+group by --->
+
+
+<--- Javascript --->
+promise all method --->
+why use await ---> 
+promisify ---> 
+freze object --->
+clouser ---> 
+fetch vs axios --->
+Slice vs Splice --->
+Promise.all, Promise.race
+How do you handle errors in asynchronous JavaScript ---> try...catch, Event Listener (someEventEmitter.on('error') or event emmiter, global error handler (window.addEventListener('error'), Logging
+Webpack or bundler ---> Module Bundling, Dependency Management, Asset Transformation
+What are some common security vulnerabilities in JavaScript applications ---> XSS, CSRF, Injection Attacks, Insecure Communication, Sensitive Data Exposure, Misconfigurations CORS
+Explain the concept of Content Security Policy (CSP) and how it helps in securing web applications ---> secure XSS, Preventing Data Injection Attacks, Blocking Mixed Content
+How do you optimize the performance of a JavaScript application ---> Cache, Lazy Loading, Asynchronously, Web Workers, Event deligation, avoid memory leak
+lazy loading and code splitting ---> Load on-demand and make module or component
+How do you ensure your JavaScript code works across different browsers ---> Polyfills
+What are memory leaks? How do you prevent them ---> allocates memory but fails to release, avoid global variable, delete event listener, use tool
+
+================================================================================================================
+
+<--- React JS --->
+What are some common pitfalls to avoid when working with React ---> Mutating State Directly, Not Using Keys Correctly, Uncontrolled Inputs, Poor Error Handling, Ignoring Performance Optimization
+jsx ---> 
+controlled component ---> 
+context api ---> 
+ref ---> 
+rtk query ---> 
+hoc ---> 
+What are components in React ---> building blocks of the user interface
+Explain the component lifecycle in React ---> Initialization, Mounting, Updating, Unmounting, Error Handling
+What are React hooks ---> are function helpful in functional componen to use react features without writing a class
+What is the purpose of the ReactDOM.render() method ---> render React elements to the DOM
+How do you optimize React applications for better performance ---> Code Splitting, Memoization, lazy loading, SSR, Bundle Optimization, Avoid Inline Styles
+React Fiber ---> Break the diffing process in parts
+What are some common React best practices ---> data store in state, Key Prop in Lists, Code Splitting, PropTypes, Memoization
+Can you explain the concept of code splitting in React ---> breaking down your JavaScript bundle into smaller chunks
+
+================================================================================================================
+
+<--- Node js --->
+How do you handle routing in Express.js --> by different HTTP methods
+How can you handle errors in Node.js applications ---> try-catch, Event emitters, Global error handling, Logging
+What tools do you use for debugging Node.js applications ---> Logging, console, debbugger, monitoring tool, Inspector
+Can you explain the concept of garbage collection in Node.js ---> automatically reclaiming memory occupied by objects that are no longer in use

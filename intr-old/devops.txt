@@ -1,0 +1,82 @@
+Devops tools : 
+    1. Plan --> Jira
+    2. Code-(CD) --> git
+    3. Build --> gradle, Maven
+    4. Test --> selenium
+    5. Release-(CI) --> Jenkin
+    6. Deploy  --> aws, docker 
+    7. Operate-(configuration management)  --> Ansible, kubernet, puppet
+    8. Monitor --> Grafana, Elastic Stack, nagios 
+
+waterfall model    
+Agile, spiral 
+Devops phase --> continuous development, testing, integration, deployment, monitoring
+Devops tool --> above
+
+version control --> Git 
+git config ( git config --global user.name "Neel" || git config --global user.email "mani@gmail.com" )
+git initial command ( git init, git add ., git status, git commit -m 'message', git remote add origin repo-url, git push origin master, git pull origin master )
+Git Branches ( git branch, git branch b-name, git checkout b-name, git branch -d b-name, git branch -m new-name, git checkout -b b-name )
+Git Merging ( git merge b-name, git log )
+Git Merge Conflicts
+Git Rebasing ( same as merge, in it transfer commits, git rebase b-name )
+Git Workflow ( Master-->hotfix-->release-->develop-->feature )
+
+Docker
+What is a Container?
+Container vs VM
+What is Docker?
+Docker installations and Setup ( sudo apt update, sudo apt install docker.io ) 
+docker environment ( engine-(cli, api, demon), object-(image, container, volume, network, swarn node & service), registry, compose, swarn )
+Docker basic Commands ( docker images, docker exec -ti c-name bash, docker ps, docker ps -a, docker stop/start c-name, docker restart c-name, docker rm c-name, docker tag image-name user-name/any-name, docker login  )
+Docker Architecture
+Docker File ( from, add, copy, run, workdir, cmd, volume, expose, entrypoint, label, docker build -t image-name . )
+Docker Storage ( volume-(docker volume create v-name, docker volume ls, docker volume prune, docker run -it -d --name volumetest --mount source=test1,target=/Applications/MAMP/htdocs/volume-check ubuntu ), bind mount, tmpfs mount )
+Docker Networks
+Docker Compose
+Docker Swarm 
+
+What is Jenkins?
+Jenkins Installation & Setup ( install java, install jenkin)
+Jenkins Architecture ( jenkin master node --> jenkin slave node ) 
+
+Setting up a CI/CD Pipeline
+Continuous Monitoring
+What is ELK Stack?
+ELK Installation & Setup & Monitoring ( prom-client, winston, winstom loki )
+Prometheus & Grafana Monitoring
+Prometheus Architecture
+Monitoring with Prometheus & Grafana
+Best Practices & Approaches
+
+Terraform ( install, HCL-(terraform init, terraform validate, terraform plan, terraform apply, terraform state, terraform docker, (resource, provider, terraform) ) )
+Terraform States and Variables ( Variables, Export TF_VAR_V-name, terraform States )
+AWS EC2 instance by Terraform ( install aws cli, aws configure, export credential )
+Terraform count & foreach 
+Terraform remote 
+
+Introduction to shell script ( app->shell->kernel->hardware, vim(i, :wq, :qa), cat, #!/bin/bash (f-name.sh), which, echo, -l, -rw-rw-r-- (- -> file,current user, group, other, rwx->7, rx->5, r->4), chmod 745 file-name , ./executable-file-name )
+Basic Shell script ( variable-($(date), read -p "Promt message" $variable-name, sudo useradd -m $variable-name ), argument-( file-name arg1 arg2, $0-> file name, $1-> arg1), condition-(if[[ $variable-name == 'any-name' ]] then else fi ) , loop-(for((num=1; num<=5; num++), rm -r file-name*, while [[ ]] do condition done ) do condition done), function, multiline comment )
+Intermediate ( Error handing ( exit 0/1 ), sudo systemctl enable docker, sudo chown $USER file-name  )
+Advanced Shell Scripting with AWS CLI
+Shell Scripting vs Makefile 
+
+kubernet - ( automate deployment, manage containerized, scale, master-(api server, schedular, etcd, control manager) and worker node-(kubelet, kube-proxy, container runtime), pods )
+install ( brew install kubectl, brew install minikube, miniKube start, miniKube status, miniKube dashboard, miniKube delete )
+Deployment - ( kubectl create deployment image-name --image=nginx:latest, kubectl get deployments, kubectl delete deployments image-name, kubectl get pods, kubectl expose deployment image-name --port=80 --type=LoadBalancer, kubectl get services, miniKube service image-name, kubectl set image deployment deployment-name pod-container-name=live-docker-image, kubectl rollout undo deployment deployment-name, kubectl scale deployment image-name --replicas=3 )
+Config file - ( kubectl apply -f file-name.yml, kubectl delete -f file-name.yml )
+Pods - ( Multiple container in one pod, Multiple container in different pod )
+volume
+
+Nginx - ( reverse proxy, indexing, load balancer, caching )
+Command - (  sudo apt install nginx, sudo systemctl staus/start/stop/restart nginx )
+File - ( /var/www/html-( project file ), /etc/nginx-( config file ), 3 important file-(nginx.conf, site-enabled, site-available) )
+Install docker - ( sudo agt install docker.io, sudo usermod -aG docker $USER, sudo reboot )
+Reverse proxy - ( site-enabled->location->proxy_pass redirect-url )
+
+Ansible - ( sudo apt install ansible, .ssh -> add file->add private key, inventory file or create file-(/etc/ansible/hosts), ansible-inventory --list -y -i inventory-file, ansible all -m ping -i /home/ubuntu/ansible/hosts --private-key=~/.ssh/ansible-key )
+
+
+
+
+mern devops roadmap points list : https://chat.openai.com/c/45ea9f36-972e-4b84-8be1-9f818d785814

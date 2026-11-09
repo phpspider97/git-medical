@@ -1,0 +1,8 @@
+[18-Sep-2022 07:02:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function eplode() in /home/d8ouyzxnuef4/public_html/testreport.in/generate_invoice.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/d8ouyzxnuef4/public_html/testreport.in/generate_invoice.php on line 30
+[18-Sep-2022 07:02:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function eplode() in /home/d8ouyzxnuef4/public_html/testreport.in/generate_invoice.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/d8ouyzxnuef4/public_html/testreport.in/generate_invoice.php on line 30

@@ -1,0 +1,367 @@
+React, Redux toolkit, javascript, typescript :- (Study any one project)
+node, microservice, mongodb, mysql :- (Study any one project)
+
+FOR OPTIMIZE PERFORMANCE ---> Optimize loops, Cache, Optimize CSS, debouncing and throttling, Lazy loading and code splitting, Optimize network requests, Use web workers, Memory management, Use Strict Mode, Avoid Callback Hell 
+
+<---JAVASCRIPT--->
+deferred scripts ---> first html execute then script 
+slice and splice ---> slice(start,end) || splice(index, howmany, item1, ....., itemX) splice modifies the original array
+first class function ---> Assigning functions to variables, Passing functions as arguments, Returning functions
+pure function ---> given the same input, will always return the same output
+IndexedDB ---> It allows you to store and retrieve data in the client side
+WeakMap ---> collection of key-value pairs where the keys must be objects
+global variables ---> global variables are variables that are declared outside of any function
+View state and Session state ---> LocalStorage, SessionStorage, Cookies
+server-sent events ---> used for sending real-time updates from the server to the client  {EventSource}
+Is JavaScript a compiled or interpreted language ---> interpreted
+labels ---> way to break out of nested structures
+prototype design pattern ---> create new objects by cloning an existing prototype
+Temporal Dead Zone ---> The time between the start of the scope and the declaration of the variable
+JavaScript Design Patterns ---> Singleton, Module, Factory, Observer, Prototype, MVC
+Variable typing ---> variable types are determined at runtime || dynamic string, number
+implicit type coercion ---> also known as type conversion || interpreter automatically converts one data type to another
+prototype and instance properties ---> belong to a specific instance of an object, shared among all instances of an object
+TypedArray ---> It allows you to work with binary data
+falsy values ---> falsy values are values that are considered false when encountered in a boolean context
+prototype chain ---> series of links between objects where each object's prototype is linked to the next object
+How do you compare an Object with a Map ---> you can iterate over one and compare it to the other
+first order function ---> doesn’t accept another function as an argument 
+What is a storage event and its event handler ---> gets triggered when there is a change in the Web Storage
+double exclamation ---> when you want to ensure that a value is treated as a boolean
+window and document ---> represents the browser window that contains DOM document || document represent DOM
+polyfill ---> Polyfills are often used to ensure that web applications work consistently across different browsers
+determine two values same or not using object ---> JSON.stringify
+seal method ---> preventing new properties from being added to it 
+uneval and eval ---> Not neccesary
+javascript accessors ---> accessors are methods that get or set the value of an object's property
+defineProperty method ---> allows you to specify attributes of the property such as writable, enumerable, and configurable.
+call stack ---> It operates on a last-in, first-out
+event queue ---> The event queue is a mechanism used to manage and execute events in a non-blocking manner
+decorator ---> @ decorators are a way to modify or extend the behavior of functions or classes, not yet part of JavaScript
+comma operator ---> is used to evaluate multiple expressions and return the result of the last expression
+How do you get the prototype of an object ---> Object.getPrototypeOf(obj)
+How to cancel a fetch request ---> you can use the AbortController to cancel a fetch request
+Observables ---> powerful way to handle asynchronous and event-driven programming Creation,Subscription,Operators,Subjects
+What is heap ---> When you create variables and objects in JavaScript they are stored in the memory heap
+Function Composition ---> use for execute 2 or more function like add, sum, multiply
+Array-like objects ---> objects that have properties similar to arrays but do not inherit from the Array prototype (.length)
+How do you minimize DOM manipulation ---> Event Delegation, Cache DOM Queries, Avoid Excessive DOM Traversal
+handle memory leaks ---> Remove event listeners, Limit global variables, Monitor memory usage
+
+<---JAVASCRIPT--->
+    /// --- 
+        Observables, 
+        Function Composition 
+    --- \\\
+
+<---REACTJS--->
+Side effects in React component ---> Clearing Timers, Updating Document Title, localstorage
+React Hooks ---> built-in functions that using the state and lifecycle methods within React function components
+rules that must be followed while using React Hooks ---> called only at the top level, call only in React Function
+Custom Hooks ---> reusing the stateful logic 
+Strict Mode in React ---> helps developers identify issues in their code, memory leaks, re-render an extra time
+Does React Hook work with static typing ---> Yes, React Hooks can work with static typing in TypeScript
+Can React Hook replaces Redux ---> they don't necessarily replace Redux
+flux ---> flux refers to a design pattern for managing the flow of data in a React application
+What is the Presentational segment ---> also known as "dumb" or "stateless" components 
+What are stateless components ---> Presentational components, not use state
+What is the use of Webpack ---> Webpack helps organize and optimize the code
+what is babel in react js ---> JavaScript compiler, used to transpile modern JavaScript code into an older version
+How do browsers read JSX files ---> with the help of babel
+children prop ---> Is a special prop that allows you to pass components or elements as children to another component
+react fiber ---> The goal of React Fiber is to enable more control over the rendering process,
+How to use production mode in React ---> Build, Use Environment Variables, Remove Console, Enable React Production Mode
+Explain switching components ---> refers to conditionally rendering different components based on certain conditions 
+With pure components, what is the issue of using render props ---> ???
+Explain the windowing technique ---> This is particularly useful when dealing with long lists or tables and scroll
+Explain Concurrent Rendering ---> rendering parts of a component tree without blocking the entire application
+Tell us about React Server components ---> SSR
+What is the use of eslint plugin for hooks ---> finding out faulty patterns in JavaScript code.
+What is render hijacking in React --->  modifying the rendering process of components achieved by HOCs, render props, custom
+What are default props ---> way to specify default values for props
+What methods are invoked during error handling? ---> componentDidCatch()
+major problems with MVC framework ---> DOM manipulation was very expensive, Applications were slow, huge memory wastage
+three principles that Redux ---> Single source of truth, State is read-only, Changes are made with pure functions
+How do you handle data persistence in a React ---> Local storage, Cookies, Server-side storage
+static component and a dynamic component ---> stateless and stateful components
+Renderless Component ---> that doesn't render any UI of its own but provides some functionality to its children
+presentational component and a container component ---> Responsible for managing the state and behavior of a functional
+synchronous action and an asynchronous action ---> that happens in a predictable, not happen immediately
+connected component ---> refers to a component that is connected to a Redux store.
+React element ---> <h1>Hello, React!</h1> is a JSX expression that represents a React element. 
+props proxy  ---> where one component passes its props down to another component
+Is lazy function supports named exports ---> No, lazy function can work with the default export of the module
+React Mixins ---> deprecated, allowed you to encapsulate and share component logic, HOC overcome
+Why should component names start with capital letter ---> helps avoid naming conflicts with HTML elements
+React and ReactDOM ---> React is the core library deals with virtual DOM, responsible for rendering in actual DOM
+setState() and replaceState() ---> used to update the state, completely replaces the current state with the new state
+render props ---> is a pattern where a component's behavior is passed as a prop to the component
+component and container ---> container is a component that is responsible for managing the data and business logic
+error boundaries do not catch errors ---> Asynchronous code, Inside Event handlers,in the Error Boundary Itself
+difference between try catch block and error boundaries ---> enables components to catch JavaScript errors anywhere 
+purpose of displayName class property ---> to provide a human-readable name for the component in React Developer
+limitations with HOCs ---> Refs aren’t passed through, Prop Conflicts
+JSX prevents Injection Attacks ---> curly braces {},
+Can I use web components in react application ---> Yes
+loadable components ---> This allows you to load components only when they are actually needed
+state mutation ---> when you try to update the state of a component without actually using setState
+Why does strict mode render twice in React ---> ???
+dispatcher ---> 
+use of the arrow function in React --->
+Webpack --->  It is mainly runs during the development process
+When should you use the top-class elements for the function element --->
+reconciliation ---> the rendered element with previously rendered DOM and will update the actual DOM if it is needed
+How can you re-render a component without using setState() function --->
+implement SSR in React ---> 
+How to make private route --->
+<---REACTJS--->
+    /// --- 
+        render props - Done, 
+        eslint - Done, 
+        render hijacking - Done, 
+        container vs component - Done, 
+        props proxy   
+    --- \\\
+
+<---NODEJS--->
+What can we build with Node.js ---> web, chat, realtime, desktop applications
+Why does Google use V8 for Node.js ---> It compiles the JavaScript code directly into machine code.
+applications is Node.js not compatible? ---> CPU-intensive like Video Editing, Scientific Simulations, Mathematical
+Node RED ---> graphicaly respresentation for execute and interect with hardware
+tasks can be done asynchronously with the help of an event loop ---> I/O Operations, Timers, Concurrency
+Explain the exit code in Node.js ---> it allows you to check the success or failure of a script or process
+causes server latency and prevents scalability in Node.js ---> Blocking I/O, Inefficient code, Improper configuration
+Control function in Node.js ---> used to handle asynchronous operations, such as reading files, making network requests
+How many layers are there in Node.js application architecture? ---> Routing,Controller,Service,Model,Middleware
+Does Node.js applications buffer data? ---> Yes, Node.js applications can buffer data
+Is it possible to run external processes with Node.js? ---> yes, with child_process
+In Node.js, how many Node object methods are available? ---> 18
+How does Node.js handle concurrency if it is single-threaded? ---> with the help of event loop
+What is a Node Inspector? ---> debugging tool , (depricate)
+What two arguments do async.queue take? ---> task function and concurrency
+What is an error-first callback ---> ensure that errors are consistently handled and checked first
+When does the child process occur? ---> when a new process is created using the child_process module
+child process in Node.js ---> separate instance of the Node.js process that runs concurrently with the parent process.
+first class function --->  passed as agrument, return by any other function, assign to variable
+buffers ---> Buffers provide a way to work with binary data directly
+Reactor Pattern ---> Reactor Pattern is often used when dealing with asynchronous operations like file I/O
+thread pool ---> there are ways to leverage multiple threads for specific tasks
+Worker threads ---> allows you to spawn separate JavaScript threads, known as worker threads, to perform parallel tasks.
+primary reason for using the event-based model ---> performance
+Why should you separate the Express app and server ---> Modularity and Code Organization, Reusability, Testing
+security implementations that are present in Node ---> Authentication, CORS, Headers, Monitoring and Logging
+assert ---> assertion tests for performing simple unit tests
+connect module ---> provides a set of robust features for building web and mobile applications. like express
+test pyramid ---> consists of three layers: unit tests, integration tests, and end-to-end tests
+clusters ---> create multiple instances of your application to take advantage of multi-core systems
+DNS lookup ---> dns module provides functions to resolve domain names and IP addresses
+Punycode ---> method for encoding Unicode characters into ASCII, it mainly used for encoding and decoding domain names
+tls module ---> often used to secure communication over the HTTP protocol || Creating TLS/SSL Clients
+How to manage sessions in Node.js ---> express-session module
+util module ---> util.promisify(original): Converts a function taking a callback into a function returning a Promise
+net module  ---> provides a simple API for creating TCP (Transmission Control Protocol) servers and clients
+Body-parser ---> parse the incoming request
+What are some tools you can use to measure the performance of a Node.js application ---> PM2, Relic, Benchmark
+some common security concerns in Node.js applications ---> Injection, XSS, CSRF, Insecure Dependencies, weak auth password
+How can you prevent common security vulnerabilities ---> Validate and sanitize user input, HTTPS, secure auth, authorization
+How do you handle memory leaks in Node.js ---> Use Heap Snapshots, node-inspect, Load and Stress Testing
+process vs thread ---> A process is an instance of a running program || A thread is a unit of execution within a process
+strategies can you employ to handle high traffic ---> Caching, Optimize Queries, Load Balancing, Horizontal Scaling, CDNs
+Stream ---> streams are objects that enable you to read or write data sequentially
+where we use mysql and mongo db ---> relational and non relational, schema and schemaless, horizontal and vertical scale 
+handle form data in Node.js ---> req.body
+version management of Node.js ---> Use a Version Manager, Specify Node.js Version, Package.json Configuration
+middleware chaining ---> 
+security best practices ---> dependencies updated, authorization, Validate input, Secure sensitive data, HTTPS, Rate-limit
+rate limiting in Express.js ---> npm install express-rate-limit
+handle global variables ---> Using the global object, Module-level variables, Environment variables
+readline module ---> 
+handle cross-site scripting (XSS) attacks in Node.js ---> Input Validation and Sanitization, HTML Escaping
+form validation ---> npm install express-validator
+handle file downloads ---> res.download(filePath, 'filename.ext', (err) => {})
+logging ---> npm install winston
+domain ---> provides a way to handle uncaught exceptions that occur in asynchronous code, such as callbacks, event emitters
+database migrations ---> npm install knex pg
+zlib module ---> can be used to compress or decompress data streams
+CSRF protection ---> npm install csurf
+dgram module ---> 
+handle long-running tasks ---> Asynchronous, Worker Threads, Child Processes, Queue Systems, Stream Processing
+<---NODEJS--->
+    /// --- 
+        Control function  
+        Reactor Pattern  
+        buffers, file system and stream 
+        Express app and server   
+        tls module 
+        net module  
+    --- \\\
+
+<---NODEJS TOOLS---> 
+    PM2                         -   DONE
+    Debugger (visual studio)    -   DONE
+    Swagger/OpenAPI             -   DONE
+    Morgan ( For logging )      -   DONE
+    Mocha
+    Chai
+    Webpack
+    ESLint
+    NVM                         -   DONE
+    Winston                     -   DONE
+    Helmet                      -   DONE
+    Grunt
+    Commander
+    Relic                        
+<---NODEJS TOOLS---> 
+
+<---PHP--->
+PEAR ---> PHP Extension and Application Repository, it provides various packages and functions
+$message and $$message ---> $message is a regular variable, $$message is a reference variable.
+include() and require() ---> show warning : require stop further execution but include not
+cookies ---> setcookie(name, value, expire, path, domain, secure, httponly)
+Path Traversal ---> 
+Memcache ---> 
+handling the result set of MySQL in PHP ---> mysqli_fetch_array(), mysqli_fetch_assoc(), mysqli_fetch_object()
+connect to a URL in PHP ---> use of the library called cURL
+create API in PHP ---> 
+PDO ---> PHP Data Object, its a PHP extensions
+type hinting ---> 
+PHP scripting engine ---> Zend
+NULL ---> represents a variable with no value
+How can you compare objects in PHP ---> 
+difference between "echo" and "print" in PHP ---> 
+Name some of the functions in PHP ---> strlen, strtolower, substr, explode, count, array_push, array_merge
+types of errors in PHP ---> Notices, Warnings, Fatal
+How does PHP interact with Javascript ---> AJAX, Embedding PHP in JavaScript
+escaping ---> mysqli_real_escape_string, htmlspecialchars, urlencode, preg_quote
+include_once() and include() ---> If the file has been included, it will not be included again. last include ignore 
+overloading and overriding ---> overloading is a form of polymorphism
+runtime exception and compile time exception ---> 
+encrypt a password using PHP ---> crypt ($input_string, $salt)
+<---PHP--->
+
+<---SYSTEM DESIGN--->
+Scalability ---> Asynchronous, clustering, worker threads, Load Balancing, Caching, Vertical and Horizontal Scaling, Database Optimization, Microservices, Monitoring, Cloud Services
+Performance ---> CDN, Minimize dependencies, Use streaming, Enable gzip compression
+Latency and Throughput ---> Horizontal Scaling, Microservices, Optimize Network Communication
+Consistency ---> Use Promises or Async/Await, Use Transactions, Implement Retry Logic, Logging, Error Handling
+Availability ---> Load Balancing, Horizontal Scaling, Fault Tolerance
+Partition Tolerance ---> Retry, Circuit Breaker, Health Checking, Replication, Asynchronous Communication
+CAP Theorem ---> Consistency, Availability, Partition tolerance
+Domain Name System
+Content Delivery Network ---> geographically distributed network of servers designed to improve the performance
+Load Balancers and Reverse Proxy
+Microservices ---> api gateway, load balancer, service REGISTRY, server, Circuit Breaker, retry, instances
+Databases ---> Sharding and Replication
+Caching ---> redis
+Message Queues ---> asynchronous communication
+
+Pastebin
+TinyURL
+Uber
+BookMyShow
+Twitter Feed
+Facebook Messenger
+Search in Instagram
+Video Streaming Service
+<---SYSTEM DESIGN--->
+
+https://github.com/donnemartin/system-design-primer
+
+<---INTERVIEW--->
+index type --->
+relation ---> one to one, one to many, many to many, polymorphic
+promise all method --->
+indexing --->
+Explain statement --->
+how website make responsive ---> 
+reverse routing ---> 
+why use await ---> 
+event loop ---> 
+Job and queue ---> 
+refresh token ---> 
+jsx ---> 
+controlled component ---> 
+context api ---> 
+ref ---> 
+promisify ---> 
+rtk query ---> 
+freze object --->
+clouser ---> 
+node ip addreess ---> 
+esile methology ---> 
+candidate key ---> 
+date time and timestamp ---> 
+procedure --->
+aggrigation --->
+hoc ---> 
+loop difference --->
+seperate date and time in mysql --->
+buffer --->
+stream --->
+fetch vs axios --->
+how to secure JWT --->
+Slice vs Splice --->
+Join --->
+group by --->
+<---INTERVIEW--->
+
+
+https://blog.logrocket.com/node-js-project-architecture-best-practices
+<---Best practices for Node.js project structure--->
+    1.   Separating roles and concerns using folder structures
+    2.   Practice modular code
+    3.   Focus on code readability
+    4.   Separate business logic and API routes
+    5.   Utilize the MVC pattern
+    6.   Use service and data access layers
+    7.   Organize configuration separately
+    8.   Separate development scripts from the main code
+    9.   Use dependency injection
+    10.  Conduct unit testing
+    11.  Use another layer for third-party services calls
+    12.  Use a JavaScript code linter
+    13.  Use a style guide
+    14.  Optimize performance with caching
+    15.  Consider serverless architecture
+    16.  Use gzip compression
+    17.  Use promises and async/await
+    18.  Handle errors more often
+<---Best practices for Node.js project structure--->
+
+<---Practice--->
+    1.  JWT                                     -   DONE
+    2.  HOC                                     -   DONE
+    3.  ERROR BOUNDARY                          -   DONE
+    4.  CUSTOM HOOK                             -   DONE
+    5.  PURE FUNCTION (usecallback, usememo)    -   DONE
+    6.  CONTEXT API, USECONTEXT                 -   DONE 
+    7.  REDUX TOOK KIT REDUX                    -   DONE
+    8.  REDUX TOOK KIT REDUX SAGA               -   DONE
+    9.  REDUX TOOK KIT QUERY                    -   DONE
+    10. SOCKET                                  -   DONE
+    11. LAMBDA FUNCTION AWS                     -   DONE 
+    12. RABBIT MQ                               -   DONE
+    13. RENDER PROPS                            -   DONE    
+    14. REACT DEV TOOL
+    15. NODE JS SCHEDULER                       -   DONE    
+    16. MYSQL QUERY (PRACTICE)                  -   DONE
+    17. Mongo DB (PRACTICE)                     -   DONE
+    18. SERVICE REGISTRY                        -   DONE
+    19. AUTH AND AUTHORIZATION                  -   DONE
+    20. NGINX                                   -   DONE
+    21. LOAD BALANCER NGINX
+    22. CALL, APPLY & BIND                      -   DONE
+    23. FUNCTION COMPOSITION                    -   DONE
+    24. CLOUSER                                 -   DONE
+    25. CHILD PROCESS           
+    26. CLUSTER                                 -   DONE
+    27. WORKER THREAD                           -   DONE
+    28. STORE PROCEDURE AND FUNCTION
+    29. RABIT MQ                                -   DONE
+    30. CIRCUIT BREAKER & RETRY                 -   DONE
+    31. NGINX CONFIG BASIC
+    32. SERVICE REGISTRY                        -   DONE
+<---Practice--->
+
+https://chat.openai.com/c/ffd82638-df74-43e4-9a3b-7781addfbbd6 ---> project
+https://excalidraw.com/#json=SDedIi6m9edRY3NUODzVD,mA0E8D4CZBKccuBQSp6LdA ---> Road map

@@ -1,0 +1,5 @@
+[01-Aug-2026 20:11:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'bbg-secret-menu1'@'118.139.176.108' (using password: YES) in /home/d8ouyzxnuef4/public_html/testreport.in/intr/connection.php:7
+Stack trace:
+#0 /home/d8ouyzxnuef4/public_html/testreport.in/intr/connection.php(7): mysqli_connect()
+#1 {main}
+  thrown in /home/d8ouyzxnuef4/public_html/testreport.in/intr/connection.php on line 7

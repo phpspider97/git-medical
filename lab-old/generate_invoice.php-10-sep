@@ -1,0 +1,267 @@
+<?php
+ include("root.php");
+ include(SITE_ROOT	.   "/classes/Report.php"); 
+ $report_obj = NEW Report();
+ include(SITE_ROOT	.	"/includes/test_result_data.php");
+ include(SITE_ROOT	.   "/classes/Encryption.php"); 
+ $encryption_obj = NEW encryption();
+
+ $is_display = false;    
+    
+ if(isset($_GET['patient_data']) || isset($_GET['is_display'])){ 
+    $is_display = ($_GET['is_display'])?true:false;
+    $encrypt_patient_id =  $_GET['patient_data']; 
+    $patient_id  = openssl_decrypt($encrypt_patient_id, $ciphering, $decryption_key, $options, $decryption_iv);
+        
+    $encrypted_patient_id = $encryption_obj->encode($patient_id);
+    $button_text = 'Update';
+    $member_id = $report_obj->getAddedByID($patient_id); 
+    $page_data = $report_obj->getPatientData($member_id,$patient_id);
+   //echo "<pre>"; print_r($page_data); die;
+    if(!empty($page_data)){
+        
+        // Paitent data
+        $patient_name       =   $page_data['patient_name'];
+        $patient_mobile       =   $page_data['patient_mobile'];
+        $lab_number         =   $page_data['lab_number'];
+        $patient_age_sex    =   $page_data['patient_age_sex'];
+        $ref_dr             =   $page_data['ref_dr'];
+        $added_date         =   $page_data['added_date'];
+
+        // Report data
+        $a_get_lab_data   =   $page_data['get_lab_data'];
+            $member_display_name    =     $a_get_lab_data['member_display_name'];
+            $member_first_name      =     $a_get_lab_data['member_first_name'];
+            $member_last_name       =     $a_get_lab_data['member_last_name'];
+            $image_path             =     $a_get_lab_data['image_path'];
+            $member_email           =     $a_get_lab_data['member_email']; 
+            $member_bio             =     $a_get_lab_data['member_bio'];
+            $member_address         =     $a_get_lab_data['member_address'];
+            
+        // Report data
+        $get_breif_report_data    =   $page_data['get_breif_report_data'];
+        
+        $a_get_report_data    =   $page_data['get_report_data'];
+
+        $get_heamatology_report_data =   $a_get_report_data[1];
+        $get_serology_report_data    =   $a_get_report_data[2];
+        $get_biochemistry_report_data    =   $a_get_report_data[3];
+        $get_renalfunctiontest_report_data    =   $a_get_report_data[4];
+        $get_lipidprofile_report_data    =   $a_get_report_data[5];
+        $get_liverfunctiontest_report_data    =   $a_get_report_data[6];
+        $get_widaltest_report_data    =   $a_get_report_data[7];
+        $get_electrolyte_report_data    =   $a_get_report_data[8];
+        $get_gtt_report_data    =   $a_get_report_data[9];
+        $get_urine_report_data    =   $a_get_report_data[10];
+    }
+}    
+?>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="ThemeMarch">
+  <!-- Site Title -->
+  <title>Medical Invoice</title>
+  <link rel="stylesheet" type="text/css" href="<?= SITE_URL;?>/assets/css/invoice.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="cs-container">
+    <div class="cs-invoice cs-style1">
+      <div class="cs-invoice_in" id="download_section">
+        <?php if(!empty($is_display)){ ?>
+        <div class="cs-invoice_head cs-type1 cs-mb25">
+          <div class="cs-invoice_left">
+            <p class="cs-invoice_number cs-primary_color cs-mb0 cs-f16"><b class="cs-primary_color">Report ID:</b> #<?= substr($encrypted_patient_id,0,7); ?></p>
+          </div>
+          <div class="cs-invoice_right cs-text_right">
+            <div class="cs-logo cs-mb5"><img src="<?= $image_path; ?>" alt="Logo" style="width:50px;height:50px;"></div>
+          </div>
+        </div>
+        <div class="cs-invoice_head cs-mb10">
+          <div class="cs-invoice_left">
+            <b class="cs-primary_color">About Lab:</b>
+            <p class="cs-mb8"><?= ($member_bio)?$member_bio:'NA'; ?></p>
+            <p><b class="cs-primary_color cs-semi_bold">Date of issue:</b> <br><?= date('d-M-Y'); ?></p>
+          </div>
+          <div class="cs-invoice_right cs-text_right">
+            <b class="cs-primary_color"><?= $member_display_name; ?></b>
+            <p>
+              <?= $member_address; ?><br/>
+              <?= $member_email;?><br/>
+              <?= $lab_number; ?>
+            </p>
+          </div>
+        </div>
+        <?php } ?>
+        <div class="cs-heading cs-style1 cs-f18 cs-primary_color cs-mb25 cs-semi_bold">Patient Information</div>
+        <ul class="cs-grid_row cs-col_3 cs-mb5" style="border:1px solid black;padding:10px;">
+          <li>
+            <p class="cs-mb20"><b class="cs-primary_color">Patient Name:</b> <br><span class="cs-primary_color"><?= $patient_name; ?></span></p>
+            <p class="cs-mb20"><b class="cs-primary_color">Patient Age/Sex:</b> <br><span class="cs-primary_color"><?= $patient_age_sex; ?></span></p> 
+          </li>
+          <li> 
+            <p class="cs-mb20"><b class="cs-primary_color">Ref doctor:</b> <br><span class="cs-primary_color"><?= $ref_dr; ?></span></p>
+            <p class="cs-mb20"><b class="cs-primary_color">Added Date:</b> <br><span class="cs-primary_color"><?= $added_date; ?></span></p>
+          </li>
+          <li>
+            <p class="cs-mb20"><b class="cs-primary_color">Patient Mobile:</b> <br><span class="cs-primary_color"><?= $patient_mobile;?></span></p>
+          </li>
+        </ul>
+        <div class="cs-table cs-style2" style="margin-top:25px;">
+          <div class="cs-round_border1">
+            <div class="cs-table_responsive">
+              <table>
+                <thead>
+                  <tr class="cs-focus_bg">
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color">Test Description</th>
+                    <th class="cs-width_2 cs-semi_bold cs-primary_color">Observed Value</th>
+                    <th class="cs-width_2 cs-semi_bold cs-primary_color cs-text_right">Unit</th>
+                    <th class="cs-width_6 cs-semi_bold cs-primary_color cs-text_right">Reference&nbsp;Range</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <?php
+                   //echo "<pre>"; print_r($get_breif_report_data);
+                    if(!empty($get_breif_report_data)){
+                        foreach($get_breif_report_data as $test_description=>$data_value){
+                            if($test_description == 'Widal test'){
+                        ?>
+                        <tr><td colspan="4"  style="padding:0px 0px;">
+                            <table style="width:100%;">
+                            <tr>
+                                <td class="cs-width_4" colspan="6" style="color:black;"><b style="font-size:22px;color:black;"><i class="fa fa-caret-right"></i> <?= ucFirst($test_description);?></b></td> 
+                            </tr> 
+                            <tr>
+                                <td class="cs-width_2"><b>&nbsp; - &nbsp;</b></td>
+                                <td class="cs-width_2 cs-text_center"><b>1:40</b></td>
+                                <td class="cs-width_2 cs-text_center"><b>1:80</b></td>
+                                <td class="cs-width_2 cs-text_center"><b>1:160</b></td>
+                                <td class="cs-width_2 cs-text_center"><b>1:320</b></td>
+                                <td class="cs-width_1 cs-text_right"><b>1:640</b></td>
+                            </tr> 
+                              <?php 
+                                if(!empty($data_value)){
+                                foreach($data_value as $a_data_key=>$data_value_detail){ 
+                                    $data_key = explode('@',$a_data_key)[0];
+                                    $data_result_1 = explode(',',$data_value_detail)[0];
+                                    $data_result_2 = explode(',',$data_value_detail)[1];
+                                    $data_result_3 = explode(',',$data_value_detail)[2];
+                                    $data_result_4 = explode(',',$data_value_detail)[3];
+                                    $data_result_5 = explode(',',$data_value_detail)[4];
+                              ?>
+                                  <tr>
+                                    <td class="cs-width_3"> &nbsp; - &nbsp; <?= $data_key;?></td>
+                                    <td class="cs-width_2 cs-text_center"><?= $data_result_1;?></td>
+                                    <td class="cs-width_2 cs-text_center"><?= $data_result_2;?></td>
+                                    <td class="cs-width_2 cs-text_center"><?= $data_result_3;?></td>
+                                    <td class="cs-width_2 cs-text_center"><?= $data_result_4;?></td>
+                                    <td class="cs-width_1 cs-text_right"><?= $data_result_5;?></td>
+                                  </tr> 
+                              <?php } }  ?>
+                        </table></td></tr>
+                    <?php
+                            }else{
+                    ?>
+                      <tr>
+                        <td class="cs-width_4" colspan="4">
+                            <b style="font-size:22px;color:black;"><i class="fa fa-caret-right" ></i> <?= ucFirst($test_description);?></b></td> 
+                      </tr> 
+                      <?php 
+                        if(!empty($data_value)){
+                        foreach($data_value as $a_data_key=>$data_value_detail){ 
+                            $data_key = explode('@',$a_data_key)[0];
+                            $data_unit = explode('@',$a_data_key)[1];
+                            $data_parameter = explode('@',$a_data_key)[2];
+                            
+                            
+                            $a_filter_value = explode('-',filter_var($data_parameter, FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION));
+                              
+                             
+                            if( filter_var($data_value_detail, FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION) >= $a_filter_value[0] && filter_var($data_value_detail, FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_ALLOW_FRACTION) <= $a_filter_value[1] ){ 
+                                
+                            }else{
+                                $data_value_detail = "<b>".$data_value_detail."</b>";
+                            }
+                            
+                      ?>
+                          <tr>
+                            <td class="cs-width_4"> &nbsp; - &nbsp; <?= $data_key;?></td>
+                            <td class="cs-width_2"><?= $data_value_detail;?></td>
+                            <td class="cs-width_2 cs-text_right"><?= $data_unit;?></td>
+                            <td class="cs-width_6 cs-text_right cs-primary_color"><?= $data_parameter;?></td>
+                          </tr> 
+                      <?php } } } ?> 
+                      
+                  <?php } }else{ ?>
+                      <tr>
+                        <td class="cs-width_12" colspan="4">No record.</td> 
+                      </tr> 
+                  <?php } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="cs-table cs-style2" style="display:none">
+          <div class="cs-table_responsive">
+            <table>
+              <tbody>
+                <tr class="cs-table_baseline">
+                  <td class="cs-width_5">
+                    <b class="cs-primary_color">Pay By</b><br/>
+                    Credit Card - 236***************** <br/>Amount: $ 113 - Due: $ 0
+                  </td>
+                  <td class="cs-width_5 cs-text_right">
+                    <p class="cs-mb5 cs-mb5 cs-f15 cs-primary_color cs-semi_bold">Tax:</p>
+                    <p class="cs-primary_color cs-bold cs-f16 cs-m0">Total Amount:</p>
+                  </td>
+                  <td class="cs-width_2 cs-text_rightcs-f16">
+                    <p class="cs-mb5 cs-mb5 cs-text_right cs-f15 cs-primary_color cs-semi_bold">$13</p>
+                    <p class="cs-primary_color cs-bold cs-f16 cs-m0 cs-text_right">$273</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cs-note">
+          <div class="cs-note_left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+          </div>
+          <div class="cs-note_right">
+            <p class="cs-mb0"><b class="cs-primary_color cs-bold">Note:</b></p>
+            <p class="cs-m0">Here we can write a additional notes for the client to get a better understanding of this invoice.</p>
+          </div>
+        </div><!-- .cs-note -->
+      </div>
+      <?php if(empty($is_display)){ ?>
+      <div class="cs-invoice_btns cs-hide_print">
+        <a href="javascript:window.print()" class="cs-invoice_btn cs-color1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M384 368h24a40.12 40.12 0 0040-40V168a40.12 40.12 0 00-40-40H104a40.12 40.12 0 00-40 40v160a40.12 40.12 0 0040 40h24" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><rect x="128" y="240" width="256" height="208" rx="24.32" ry="24.32" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path d="M384 128v-24a40.12 40.12 0 00-40-40H168a40.12 40.12 0 00-40 40v24" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><circle cx="392" cy="184" r="24"/></svg>
+          <span>Print</span>
+        </a> 
+        <?php $url_encode_data =  urlencode("http://testreport.in/generate_invoice.php?patient_data=$encrypt_patient_id&is_display=1"); ?>
+        <a id="download_btn" class="cs-invoice_btn cs-color2" target="_blank" href=" https://wa.me/<?= "91$patient_mobile";?>?text=Hi <?= $patient_name;?>, your test report link from <?= $member_display_name; ?> : <?= $url_encode_data ?> ">
+            <i class="fa fa-whatsapp" aria-hidden="true" style="font-size:25px;"></i>&nbsp;&nbsp; 
+          <span>Share to patient number</span>
+        </a>
+        <!--<a id="download_btn" class="cs-invoice_btn cs-color2" style="background-color:#9b59b6"> -->
+        <!--    <i class="fa fa-envelope" aria-hidden="true" style="font-size:25px;"></i>&nbsp; &nbsp;-->
+        <!--  <span>Share</span>-->
+        <!--</a>-->
+      </div>
+      <?php } ?>
+    </div>
+  </div> 
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+  <!--<script src="<?= SITE_URL;?>/assets/js/invoice/jspdf.min.js"></script>-->
+  <!--<script src="<?= SITE_URL;?>/assets/js/invoice/html2canvas.min.js"></script>-->
+  <!--<script src="<?= SITE_URL;?>/assets/js/invoice/main.js"></script>-->
+</body>
+</html>

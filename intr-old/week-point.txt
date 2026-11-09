@@ -1,0 +1,194 @@
+Php :
+    Constant
+    Switch
+    Global Variable
+    Loops
+    Goto
+    Type Casting
+    String Function ( strlen, strpos, substr, strtoupper, strtolower, str_replace, trim, explode, implode )
+    Array Function ( count, array_push, array_pop, array_shift, array_unshift, array_merge, in_array, array_keys )
+  
+Javascript :
+    Array operation ( push, pop, shift, reverse, length )                                                         
+    String operation ( split, replace, toUpperCase, substring )                                 
+    Object operation ( hasOwnProperty, Object.keys, Object.values, Object.entries )  
+    slice and splice                                                         
+    pure function                                                              
+    LocalStorage & SessionStorage                                           
+    labels                                                                  
+    prototype                                                               
+    seal method ( Only update work )                                                        
+    javascript accessors   
+    Observables ( rxjs )
+    Function Composition    
+    Callback                                                                
+    Generator                                                               
+    Event Bubbling                                                          
+    Rest operator                                                               
+    Spread operator                                                         
+    Destructuring                                                           
+    Promise                                                                 
+    Promises chaining 
+    Async & Await                                                           
+    Error handling                                                          
+    High Order function                                                     
+    Closure                                                                 
+    Call, apply & bind                                                      
+    Currying                                                                
+    Event Delegation                                                        
+    Throttle & Debouncing                                                   
+    Bubbling and capturing                                                  
+
+React : 
+    Custom Hooks                                                            
+    children prop                                                           
+    Lazy Loading                                                            
+    React portals       
+    HOC                                                                     
+    ERROR BOUNDARY                                                           
+    PURE FUNCTION (usecallback, usememo)                                    
+    CONTEXT API, USECONTEXT                                                 
+    REDUX TOOK KIT REDUX                                                    
+    REDUX TOOK KIT REDUX SAGA
+    REDUX TOOK KIT QUERY                                                    
+    RENDER PROP  
+    Error Tools ( Error Boundary, Error Logging-(Sentry), Jest, PropType Validation, TypeScript )       
+    Performance Tools ( React DevTools, Lighthouse, Profiler, Storybook )   
+    Module use ( Router, Redux, Axios, PropTypes, TypeScript, React Hook Form, ESLint, Helmet, Jest)   
+    Dev vs Production ( ENV Variables, Code Minification, Optimizing Assets, Disable Source Maps ) 
+    Securing best practices ( HTTPS, Sanitization, Headers, CORS, Rate Limiting, file Security, Logging )
+       
+Node :
+    async.queue                                                             
+    error-first callback                                                    
+    child process                                                           
+    cluster                                                                 
+    buffer                                                                  
+    stream                                                                  
+    Worker threads                                                              
+    express-session                                                         
+    form validation - ( JOI )                                                   
+    logging - ( Winston ) 
+    Middleware  
+    Event Emitter                                                           
+    Callback hell                                                           
+    load balancing
+    Authorization                                                           
+    Connection pooling                                                      
+    process.nextTick and setImmediate and setTimeout                        
+    NODE_ENV                                                                
+    JWT                                                                     
+    Schedular ( node-cron )   
+    Tools ( PM2, Winston, Helmet, Relic, ESLint, Typescript )   
+    Large file upload ( Busboy, Multer )     
+    Monitoring Tools ( Prometheus, Grafana )
+    Logging Tools ( Elastic Stack, winston loki )
+    Error Tracking and Reporting ( Sentry )
+    Infrastructure Monitoring ( CloudWatch )                                          
+     
+Mysql :
+    BETWEEN & NOT BETWEEN                                                   
+    LIMIT & OFFSET	                                                        
+    COMMIT & ROLLBACK	                                                    
+    JOIN	                                                                
+    GROUP BY & HAVING	                                                    
+    SubQuery with EXISTS & NOT EXISTS	                                    
+    IF & CASE Statement	                                                    
+    String Functions ( SUBSTRING('Hello World', 7, 5), UPPER, LOWER, LENGTH, REPLACE )	     
+    Time Functions ( DATE('2024-23-02'), CURDATE, now(), DATEDIFF, DATE_ADD(NOW(), INTERVAL 1 DAY) )     
+    VIEW
+    INDEX                                                                   
+    Triggers                                                                
+    Stored Procedures and Functions	                                        
+    partitioning                                                            
+    relationship                                                            
+
+Mongodb :
+    CRUD Operations	                                                           
+    Select Column                                                              
+    Comparison operators in MongoDB	 ( $eq, $in, $lt, $gt )                                          
+    Logical Operators ( $or, $and )                                                  
+    Element query opeator ( $exists and $type )                                              
+    MongoDB Queries with Evaluation Operators ( $expr )                      
+    Querying Arrays	 ( $all, $size, $elemMatch )                            
+    Sort                                                                       
+    Operator ( $inc, $min, $max, $mul, $unset, $rename, $Upsert )                
+    Update Nested Arrays ( $pop, $pull, $push, $addToSet ) 
+    Indexing
+    Aggrigation ( $match, $group, $project, $sort, $limit, $skip, $unwind, $sum, $lookup, $addFields, $bucket, $facet, $sample, $count  )
+    Capped Collection
+    $reduce
+    $subtract
+    
+Aws :
+    Lambda
+    Ec2
+    Security Groups
+    Metadata
+    Elastic IP
+    EBS & Instance Store
+    Snapshot
+    Ami ( Amazon Machine Image )
+    Load Balancer ( Classic, Application, Network )
+
+Docker :
+    Pull Image ( docker run -it image-name )
+    Container List ( docker container ls )
+    Container List ( docker container ls -a )
+    Container Start ( docker start container-name )
+    Container Stop ( docker stop container-name )
+    Container Start ( docker exec -it container-name )
+    Container Expose ( docker run -it -p 3002:3002 -e PORT=3002 image-name )
+    Build Docker ( docker built -t image-name . )
+    Container Name ( docker run -it --name container-name image-name )
+    Docker Network ( docker network inspect bridge )
+    Docker Network ( docker network inspect host )
+    Network List ( docker network ls )
+    Docker Network ( docker run -it --network=host image-name ) // directly connect your machine
+    Docker Network ( docker run -it --network=none image-name ) // no internet access
+    Docker Volume ( docker run -it -v system-location:container-location image-name )
+
+Some point :
+    prototype chain
+    javascript accessors
+    Observables
+    Webpack
+    With pure components, what is the issue of using render props
+    Explain Concurrent Rendering
+    eslint
+    render hijacking
+    React element
+    props proxy
+    render props
+    purpose of displayName class property 
+    loadable components
+    state mutation
+    How can you re-render a component without using setState() function
+    When should you use the top-class elements for the function element
+    Control function in Node.js
+    Reactor Pattern
+    tls module
+    util module
+    net module
+    How do you handle memory leaks in Node.js
+    Stored Procedures and Functions	
+    Browser Performance and Optimization ( lazy loading, code splitting, and caching strategies )
+    Security ( XSS, CSRF, SQL injection )
+    Testing ( Jest )
+    Version Control and Deployment ( CI/CD )
+
+https://github.com/phpspider97/task-management.git
+cd/ci  : https://docs.google.com/document/d/1qos4eUfY4vZojjnZLSGw8D3A46Yy2r42uiZPyPxL17A/edit?pli=1
+devops : https://docs.google.com/spreadsheets/d/1eE-NhZQFr545LkP4QNhTgXcZTtkMFeEPNyVXAflXia0/edit?pli=1
+
+React Js
+Node Js
+Next Js
+React Native 
+Devops 
+Php 
+Python 
+Mysql 
+MongoDB 
+Blog project
+Interview Question
