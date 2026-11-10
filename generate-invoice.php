@@ -15,7 +15,7 @@ $patient_name = $patient_email = $patient_mobile = $patient_note = '';
 $patient_age_sex = $ref_dr = $added_date = '';
 $lab_number = $admin_id = $patient_id = '';
 $encrypted_patient_id = '';
-$member_display_name = $image_path = $admin_email = '';
+$member_display_name = $image_path = $admin_email = $logo_image = '';
 $admin_bio = $admin_shop_address = $admin_shop_name = '';
 $get_breif_report_data = [];
 $a_get_report_data = [];
@@ -84,6 +84,7 @@ if (isset($_GET['patient_data'])) {
 
         $admin_id = $a_get_lab_data['admin_id'] ?? $admin_id;
         $member_display_name = $a_get_lab_data['admin_name'] ?? '';
+        $logo_image = $a_get_lab_data['user_image'] ?? '';
         $image_path = $a_get_lab_data['data_image'] ?? '';
         $admin_email = $a_get_lab_data['admin_email'] ?? '';
         $admin_bio = $a_get_lab_data['admin_about_shop'] ?? '';
@@ -278,7 +279,7 @@ $lab_qualification = '(Lucky) D.M.L.T.';
             font-weight: 900;
             margin: 0;
             line-height: 1.1;
-            color: #080b86;
+            color: red;
         }
 
         .lab-brand h2 {
@@ -786,7 +787,10 @@ $lab_qualification = '(Lucky) D.M.L.T.';
 
                         <div class="lab-brand">
 
-                            <h1><?= invoice_h($lab_title); ?></h1>
+                            <h1>
+                                <span style="color:red !important"><?= invoice_h($lab_title); ?></span> <br />
+                                LABORATORY
+                            </h1>
 
                             <div class="lab-address">
                                 <?= invoice_h($lab_address); ?>
@@ -801,8 +805,7 @@ $lab_qualification = '(Lucky) D.M.L.T.';
                                 <div class="lab-logo">
                                     <img src="<?= invoice_h($image_path); ?>"
                                          alt="Laboratory Logo">
-                                </div>
-
+                                </div> 
                             <?php } ?>
 
                             Fully Computerised
@@ -1134,6 +1137,12 @@ $lab_qualification = '(Lucky) D.M.L.T.';
 
                         <div class="lab-technician">
                             Lab Technician
+                            <?php if (!empty($logo_image)) { ?>
+                                <div class="lab-logo">
+                                    <img src="<?= invoice_h($logo_image); ?>"
+                                        alt="Laboratory Logo">
+                                </div>
+                            <?php } ?>
                         </div>
 
                     </div>
@@ -1480,11 +1489,11 @@ $lab_qualification = '(Lucky) D.M.L.T.';
 #html-template ul li p,
 #html-template ul li span {
     font-size: 16px !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
 }
 
 #html-template ul li b {
-    font-weight: 800 !important;
+    font-weight: 600 !important;
 }
 
 /* Section headings */
