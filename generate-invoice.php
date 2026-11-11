@@ -268,8 +268,8 @@ $lab_qualification = '(Lucky) D.M.L.T.';
         }
 
         .lab-logo img {
-            max-width: 75px;
-            max-height: 60px;
+            max-width: 115px;
+            max-height: 100px;
             object-fit: contain;
         }
 
