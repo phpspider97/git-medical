@@ -1126,7 +1126,7 @@ $lab_qualification = '(Lucky) D.M.L.T.';
                 <!-- LAB FOOTER -->
 
                 <div class="lab-footer">
-
+ 
                     <br><br>
 
                     <div class="lab-footer-top">
